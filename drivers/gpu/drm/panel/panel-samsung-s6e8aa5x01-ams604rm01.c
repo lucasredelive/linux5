@@ -266,7 +266,7 @@ static int s6e8aa5x01_ams604rm01_probe(struct mipi_dsi_device *dsi)
 	dsi->lanes = 4;
 	dsi->format = MIPI_DSI_FMT_RGB888;
 	dsi->mode_flags = MIPI_DSI_MODE_VIDEO | MIPI_DSI_MODE_VIDEO_BURST |
-			  MIPI_DSI_MODE_VIDEO_NO_HSA;
+			  MIPI_DSI_MODE_VIDEO_HSA;
 
 	drm_panel_init(&ctx->panel, dev, &s6e8aa5x01_ams604rm01_panel_funcs,
 		       DRM_MODE_CONNECTOR_DSI);
@@ -312,7 +312,7 @@ static struct mipi_dsi_driver s6e8aa5x01_ams604rm01_driver = {
 	.probe = s6e8aa5x01_ams604rm01_probe,
 	.remove = s6e8aa5x01_ams604rm01_remove,
 	.driver = {
-		.name = "panel-s6e8aa5x01-ams604rm01",
+		.name = "panel-samsung-s6e8aa5x01-ams604rm01",
 		.of_match_table = s6e8aa5x01_ams604rm01_of_match,
 	},
 };
